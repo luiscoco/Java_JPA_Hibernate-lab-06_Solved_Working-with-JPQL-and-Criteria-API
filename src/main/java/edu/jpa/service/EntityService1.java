@@ -17,7 +17,7 @@ public class EntityService1 extends EntityService {
             TypedQuery<Employee> query = em.createQuery(queryText, Employee.class);
             query.setParameter("name", name);
             List<Employee> result = query.getResultList();
-            em.getTransaction().rollback();
+            em.getTransaction().commit();
             return result;
         } finally {
             if (em.isOpen()) em.close();
@@ -32,7 +32,7 @@ public class EntityService1 extends EntityService {
             String queryText = "select new edu.jpa.service.DepartmentInfo(e.department.name,count(e.department)) from Employee e group by e.department.name";
             TypedQuery<DepartmentInfo> query = em.createQuery(queryText, DepartmentInfo.class);
             List<DepartmentInfo> result = query.getResultList();
-            em.getTransaction().rollback();
+            em.getTransaction().commit();
             return result;
         } finally {
             if (em.isOpen()) em.close();
