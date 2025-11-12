@@ -26,7 +26,7 @@ public class EntityService2 extends EntityService {
             TypedQuery<Employee> query = em.createQuery(cq);
             query.setParameter("name", name);
             List<Employee> result = query.getResultList();
-            em.getTransaction().rollback();
+            em.getTransaction().commit();
             return result;
         } finally {
             if (em.isOpen()) em.close();
@@ -51,7 +51,7 @@ public class EntityService2 extends EntityService {
             em.getTransaction().begin();
             TypedQuery<DepartmentInfo> query = em.createQuery(cq);
             List<DepartmentInfo> result = query.getResultList();
-            em.getTransaction().rollback();
+            em.getTransaction().commit();
             return result;
         } finally {
             if (em.isOpen()) em.close();
