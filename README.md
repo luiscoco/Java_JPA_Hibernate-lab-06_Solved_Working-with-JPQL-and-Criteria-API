@@ -1,5 +1,7 @@
 # Java_JPA_Hibernate-lab-06_Solved
 
+<img width="495" height="480" alt="image" src="https://github.com/user-attachments/assets/a040df7c-47f6-490a-b58f-84f0b02daa7f" />
+
 ## 1. Exercise
 
 Working with JPQL and Criteria API
